@@ -16,6 +16,54 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Основной контент: грид-раскладка с двумя колонками */
+.content {
+  display: grid;
+  grid-template-areas: "result details";  /* Две колонки: результат и детали */
+  grid-template-rows: 1fr;                /* Одна строка на всю высоту */
+  align-items: end;                       /* Прижимаем элементы к низу */
+  max-width: 1140px;                      /* Максимальная ширина контента */
+  gap: 40px;                              /* Отступ между колонками */
+}
+
+/* Секция с результатом поиска */
+.result {
+  grid-area: result;  /* Занимает левую колонку в гриде */
+}
+
+/* Секция с деталями (список карточек) */
+.content__details {
+  grid-area: details;  /* Занимает правую колонку в гриде */
+  width: 100%;         /* Растягиваем на всю доступную ширину */
+  height: 100%;        /* Растягиваем на всю доступную высоту */
+}
+
+/* Контейнер списка карточек с фиксированной высотой и скроллом */
+.content__list-container {
+  position: relative;   /* Для позиционирования дочерних элементов */
+  height: 298px;        /* Фиксированная высота блока */
+  width: 399px;         /* Фиксированная ширина блока */
+  overflow-y: auto;     /* Вертикальный скролл при переполнении */
+}
+
+/* Форма поиска: флекс-раскладка в строку */
+.search-form {
+  display: flex;
+  flex-direction: row;           /* Элементы в строку */
+  justify-content: space-between;/* Распределение пространства между элементами */
+  align-items: flex-end;         /* Выравнивание по нижнему краю */
+}
+
+/* Список карточек: вертикальное расположение */
+.content__list {
+  display: flex;
+  flex-direction: column;  /* Карточки в колонку */
+  gap: 30px;               /* Отступы между карточками */
 }
 
 h1,
