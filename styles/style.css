@@ -107,6 +107,59 @@ html {
   flex-grow: 1;  /* Растягивается на всё доступное пространство */
 }
 
+/* Заголовок формы: полупрозрачный текст */
+.search-form__fieldset-title {
+  font-weight: 400;        /* Обычное начертание */
+  font-size: 18px;         /* Размер шрифта */
+  margin-bottom: 5px;      /* Отступ снизу */
+  opacity: 0.7;            /* Полупрозрачность для эффекта */
+}
+
+/* Главный заголовок страницы (через вложенность) */
+.content__details h1 {
+  margin-bottom: 26px;     /* Большой отступ снизу */
+  font-size: 75px;         /* Крупный размер шрифта */
+  font-weight: bold;       /* Жирное начертание */
+  line-height: 94%;        /* Межстрочный интервал */
+  font-family: 'Oswald';   /* Шрифт заголовка */
+  text-transform: uppercase; /* Все буквы заглавные */
+}
+
+/* Акцентная часть заголовка (серый цвет) */
+.content__accent {
+  color: #545050;  /* Серый цвет для акцента */
+}
+
+/* Ссылки карточек: убираем стандартное оформление */
+.content__card-link {
+  color: #FFFFFF;      /* Белый цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Заголовок карточки видео */
+.content__video-card-title {
+  text-transform: uppercase;   /* Заглавные буквы */
+  white-space: nowrap;         /* Запрет переноса строк */
+  overflow: hidden;            /* Скрытие переполнения */
+  text-overflow: ellipsis;     /* Многоточие при обрезке */
+  font-family: 'Oswald';       /* Шрифт как в заголовке */
+  font-weight: bold;           /* Жирное начертание */
+  font-size: 30px;             /* Размер шрифта */
+  max-width: 190px;            /* Ограничение ширины */
+}
+
+/* Описание карточки видео с ограничением строк */
+.content__video-card-description-container {
+  font-size: 18px;               /* Размер шрифта */
+  font-weight: normal;           /* Обычное начертание */
+  font-family: 'Fira Sans Condensed'; /* Основной шрифт */
+  display: -webkit-box;          /* Блочное отображение для line-clamp */
+  -webkit-line-clamp: 3;         /* Ограничение до 3 строк */
+  -webkit-box-orient: vertical;  /* Вертикальная ориентация */
+  overflow: hidden;              /* Скрытие переполнения */
+  line-height: 1.22;             /* Межстрочный интервал */
+}
+
 h1,
 h2,
 h3,
