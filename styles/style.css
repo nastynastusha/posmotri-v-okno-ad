@@ -251,6 +251,75 @@ html {
   cursor: pointer;             /* Курсор-указатель */
 }
 
+
+.button {
+  border: 1px solid white;      /* Белая рамка */
+  background: transparent;      /* Прозрачный фон */
+  color: white;                 /* Белый текст */
+  font-weight: normal;          /* Обычное начертание */
+  font-size: 18px;              /* Размер шрифта */
+  padding: 0;                   /* Убираем внутренние отступы */
+  font-family: "Fira Sans Condensed"; /* Основной шрифт */
+  opacity: 0.8;                 /* Легкая прозрачность */
+  height: 34px;                 /* Фиксированная высота */
+  outline: none;                /* Убираем стандартную обводку */
+  cursor: pointer;              /* Курсор-указатель */
+}
+
+/* Состояние наведения на кнопку */
+.button:hover {
+  text-decoration: underline;   /* Подчеркивание текста */
+}
+
+/* Состояние нажатия на кнопку */
+.button:active {
+  background: #545050;          /* Серый фон при активации */
+}
+
+/* Состояние фокуса на кнопке */
+.button:focus-visible {
+  outline: 1px solid white;     /* Белая обводка при фокусе */
+  outline-offset: 1px;          /* Отступ обводки от кнопки */
+}
+
+/* Конкретная кнопка "Найти" в форме */
+.search-form__submit-button {
+  width: 194px;  /* Фиксированная ширина кнопки поиска */
+}
+
+/* Кнопка "Показать еще" в списке карточек */
+.more-button {
+  width: 100%;      /* Растягиваем на всю ширину контейнера */
+  margin-top: 20px; /* Отступ сверху от списка карточек */
+}
+
+/* Отступы для карточек списка */
+.content__list-item {
+  padding: 2px;  /* Небольшие отступы для визуального разделения */
+}
+
+/* Сбрасываем стандартную обводку у карточек и ссылок */
+.content__list-item,
+.content__card-link {
+  outline: none;  /* Убираем стандартную обводку фокуса */
+}
+
+/* Обводка карточки при фокусе с клавиатуры */
+.content__card-link:focus-visible {
+  outline: 1px solid white;  /* Белая обводка для доступности */
+}
+
+/* Стиль для активной (текущей) карточки */
+.content__card-link_current .content__video-card {
+  background: #545050;  /* Серый фон для выделения активной карточки */
+}
+
+/* Подчеркивание текста при наведении на карточку */
+.content__video-card:hover {
+  text-decoration: underline;  /* Подчеркивание для интерактивности */
+  cursor: pointer;             /* Курсор-указатель */
+}
+
 h1,
 h2,
 h3,
