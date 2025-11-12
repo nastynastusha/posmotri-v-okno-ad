@@ -160,6 +160,97 @@ html {
   line-height: 1.22;             /* Межстрочный интервал */
 }
 
+/* Скрытие элементов для скринридеров */
+.visually-hidden {
+  position: absolute;      /* Абсолютное позиционирование */
+  inline-size: 1px;       /* Минимальная ширина */
+  block-size: 1px;        /* Минимальная высота */
+  overflow: hidden;       /* Скрытие переполнения */
+  clip: rect(0, 0, 0, 0); /* Обрезка содержимого */
+  clip-path: inset(50%);  /* Дополнительная обрезка */
+  white-space: nowrap;    /* Запрет переноса строк */
+}
+
+/* Полеset формы: убираем стандартную рамку */
+.search-form__fieldset {
+  border: 0;  /* Убираем границу */
+}
+
+/* Лейбл формы: центрирование содержимого */
+.search-form__label {
+  display: flex;              /* Флекс-контейнер */
+  justify-content: center;    /* Центрирование по горизонтали */
+  align-items: center;        /* Центрирование по вертикали */
+  width: fit-content;         /* Ширина по содержимому */
+}
+
+/* Текстовое поле ввода */
+.search-form__textfield {
+  padding-left: 0;                /* Убираем отступ слева */
+  font-size: 18px;                /* Размер шрифта */
+  font-weight: normal;            /* Обычное начертание */
+  font-family: "Fira Sans Condensed"; /* Основной шрифт */
+  min-width: 230px;               /* Минимальная ширина */
+  background-color: transparent;  /* Прозрачный фон */
+  border: none;                   /* Убираем стандартную рамку */
+  border-top: 1px solid white;    /* Верхняя граница */
+  border-bottom: 1px solid white; /* Нижняя граница */
+  appearance: none;               /* Убираем браузерные стили */
+  outline: none;                  /* Убираем обводку фокуса */
+  color: #FFFFFF;                 /* Белый цвет текста */
+}
+
+/* Обводка лейбла при фокусе на текстовом поле */
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: 1px solid white;  /* Белая обводка */
+  outline-offset: 1px;       /* Отступ обводки от элемента */
+}
+
+/* Список чекбоксов: горизонтальное расположение */
+.search-form__checkbox-list {
+  display: flex;              /* Флекс-контейнер */
+  align-items: center;        /* Центрирование по вертикали */
+  justify-content: center;    /* Центрирование по горизонтали */
+  gap: 15px;                  /* Отступы между чекбоксами */
+}
+
+/* Кастомный чекбокс (псевдо-элемент) */
+.search-form__pseudo-checkbox {
+  width: 19px;              /* Ширина чекбокса */
+  height: 19px;             /* Высота чекбокса */
+  border: 1px solid white;  /* Белая рамка */
+  margin-right: 5px;        /* Отступ справа от текста */
+  display: flex;            /* Флекс для центрирования */
+  justify-content: center;  /* Центрирование по горизонтали */
+  align-items: center;      /* Центрирование по вертикали */
+}
+
+/* Внутренний квадрат чекбокса (галочка) */
+.search-form__pseudo-checkbox::after {
+  content: '';             /* Псевдо-элемент */
+  width: 15px;             /* Размер меньше чекбокса */
+  height: 15px;            /* Размер меньше чекбокса */
+  background: white;       /* Белый фон */
+  opacity: 0;              /* Изначально скрыт */
+}
+
+/* Показ галочки при выбранном чекбоксе */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;  /* Показываем галочку */
+}
+
+/* Обводка лейбла при фокусе на чекбоксе */
+.search-form__label:has(.search-form__checkbox:focus-within) {
+  outline: 1px solid white;  /* Белая обводка */
+  outline-offset: 1px;       /* Отступ обводки */
+}
+
+/* Подчеркивание текста при наведении на лейбл */
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;  /* Подчеркивание */
+  cursor: pointer;             /* Курсор-указатель */
+}
+
 h1,
 h2,
 h3,
